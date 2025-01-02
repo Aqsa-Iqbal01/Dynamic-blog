@@ -2,6 +2,7 @@
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
 import CommentSection from '@/app/components/CommentSection'
+import Image from 'next/image';
 
 const posts = {
   'generative-ai': {
@@ -23,7 +24,7 @@ const posts = {
     title: 'TypeScript',
     image: '/type.webp',
     content: `
-      TypeScript is rapidly becoming one of the most popular programming languages for web developers. Its growth can be attributed to several key advantages that make it a valuable tool for modern development.
+      TypeScript is rapidly becoming one of the most popular programming languages for web developers. It&apos;s growth can be attributed to several key advantages that make it a valuable tool for modern development.
       <br /><br />
       Stronger Code with Static Typing:
 
@@ -48,13 +49,12 @@ With increasing support from major frameworks like React, Angular, and Vue, Type
     title: 'JavaScript',
     image: '/java.png',
     content: `
-      Women are increasingly taking the lead in **artificial intelligence (AI)**, contributing groundbreaking research and solutions to some of the world’s most complex challenges. From AI ethics to machine learning and robotics, women are shaping the future of AI and creating technologies that will impact society for years to come.
+      JavaScript is a dynamic programming language that&apos;s  used for web development, in web applications, for game development, and lots more. It allows you to implement dynamic features on web pages that cannot be done with only HTML and CSS.
       <br /><br />
-      Historically, women have been underrepresented in AI, but that’s rapidly changing. Leading AI researchers like **Fei-Fei Li**, who pioneered the **ImageNet** project, and **Timnit Gebru**, co-founder of **Black in AI**, have been at the forefront of advancing the field. These women have demonstrated that diversity is crucial for the development of ethical, inclusive, and innovative AI systems.
+      Many browsers use JavaScript as a scripting language for doing dynamic things on the web. Any time you see a click-to-show dropdown menu, extra content added to a page, and dynamically changing element colors on a page, to name a few features, you&apos;re seeing the effects of JavaScript.
       <br /><br />
-      Women in AI are addressing some of the most pressing challenges, including **algorithmic bias**, **AI accountability**, and the **ethical implications** of machine learning. Their contributions are ensuring that AI technologies are developed in ways that benefit everyone, not just a select few. By bringing a diverse set of experiences and viewpoints to the table, they’re laying the foundation for more fair and equitable AI systems.
-      <br /><br />
-      As the field continues to evolve, it’s essential to support and promote more female voices in AI to inspire the next generation of women to enter this critical field and lead the way toward a more inclusive and innovative future.
+     Without JavaScript, all you would have on the web would be HTML and CSS. These alone limit you to a few web page implementations. 90% (if not more) of your webpages would be static, and you dont only have the dynamic changes like animations that CSS provides.
+      
     `,
   },
   'Python': {
@@ -63,7 +63,7 @@ With increasing support from major frameworks like React, Angular, and Vue, Type
     content: `
       Python has become one of the most widely used programming languages in the world today. Known for its simplicity, versatility, and ease of use, Python is a great choice for both beginners and experienced developers. In this blog, we’ll explore why Python is a top choice for many.
       <br /><br />
-     Python's syntax is simple and clean, making it an ideal language for beginners. You don't have to worry about complex rules or syntax, which makes learning Python easier and faster compared to many other programming languages.
+     Python&apos;s syntax is simple and clean, making it an ideal language for beginners. You don&apos;t have to worry about complex rules or syntax, which makes learning Python easier and faster compared to many other programming languages.
       <br /><br />
      Wide Range of Applications:
 
@@ -78,7 +78,7 @@ Python has a vast and active community of developers who continuously contribute
     title: 'Next.js',
     image: '/nextjs.webp',
     content: `
-      Next.js is rapidly becoming one of the most popular frameworks for web development, and for good reason. If you're already familiar with React, you'll love Next.js. It takes React to the next level by providing features that make web development faster, more efficient, and more powerful.
+      Next.js is rapidly becoming one of the most popular frameworks for web development, and for good reason. If you&apos;re already familiar with React, you&apos;ll love Next.js. It takes React to the next level by providing features that make web development faster, more efficient, and more powerful.
       <br /><br />
        SEO-Friendly:
 
@@ -124,10 +124,13 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       <Navbar />
       <div className="max-w-7xl mx-auto p-8">
         <h1 className="text-5xl font-extrabold text-gray-800 mb-6 text-center">{post.title}</h1>
-        <img
+        <Image
           src={post.image}
           alt={post.title}
           className="w-full h-auto sm:h-96 object-cover rounded-xl shadow-lg mb-8"
+          width={700}
+          height={700}
+
         />
         <div className="prose lg:prose-xl text-gray-800 font-serif" dangerouslySetInnerHTML={{ __html: post.content }} />
         <CommentSection />

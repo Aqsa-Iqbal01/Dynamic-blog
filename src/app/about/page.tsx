@@ -1,5 +1,6 @@
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -16,17 +17,19 @@ export default function AboutPage() {
           <section className="text-center mb-12">
             <h1 className="text-4xl font-bold text-blue-900 mb-6">ADEN BLOG</h1>
             <p className="text-xl text-gray-900 leading-relaxed mx-auto max-w-3xl">
-              Welcome to ADEN BLOG your destination for insightful stories, tech innovations,
+              Welcome to Aden blog your destination for insightful stories, tech innovations,
               and inspiring narratives. Our mission is to educate, empower, and celebrate the vibrant world of technology.
             </p>
           </section>
 
           <section className="flex flex-col md:flex-row gap-12 items-center mb-16">
             <div className="md:w-1/2">
-              <img
+              <Image
                 src="/aboutimg.jpg"
                 alt="About Us"
                 className="w-full h-96 object-cover rounded-lg shadow-xl transform shadow-slate-400 transition-all duration-300"
+                width={700}
+                height={700}
               />
             </div>
             <div className="md:w-1/2">
@@ -44,7 +47,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-lg text-black text-center mb-8 mx-auto max-w-2xl">
               We are excited to have you on this journey of discovery and innovation. Stay curious, keep exploring,
-              and let's dive into the fascinating world of technology together. Your adventure starts here!
+              and let&apos;s dive into the fascinating world of technology together. Your adventure starts here!
             </p>
             <div className="flex justify-center">
               

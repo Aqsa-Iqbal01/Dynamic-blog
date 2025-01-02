@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -86,10 +87,12 @@ export default function HomePage() {
             <Link href={`/posts/${post.slug}`} key={post.slug}>
               <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition bg-slate-100 bg-opacity-90">
                 <div className="h-56 overflow-hidden">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition"
+                    width={700}
+                    height={700}
                   />
                 </div>
                 <div className="p-5">
