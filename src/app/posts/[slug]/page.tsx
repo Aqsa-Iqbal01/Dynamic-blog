@@ -114,10 +114,15 @@ Tailwind makes it easy to rapidly prototype and design websites. Since the class
   },
 };
 
-export default function PostPage({ params }: { params: { slug: string } }) {
+// Make sure the component is `async`
+export default async function PostPage({ params }: { params: { slug: string } }) {
+  // Ensure that `params.slug` is used after awaiting
   const post = posts[params.slug as keyof typeof posts];
 
-  if (!post) return <div>Post not found</div>;
+  // Catch error if post is not found
+  if (!post) {
+    return <div>Post not found</div>;
+  }
 
   return (
     <div className="bg-blue-50 min-h-screen">
